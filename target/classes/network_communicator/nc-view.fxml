@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="network_communicator.NcController"
+          minHeight="640" minWidth="360"
+          vgap="5" hgap="5"
+          alignment="CENTER">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="15"/>
+        <ColumnConstraints percentWidth="50"/>
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="15"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="80"/>
+        <RowConstraints percentHeight="10"/>
+    </rowConstraints>
+    <CheckBox
+            fx:id="_cbAsServer"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="0"
+            text="作为服务器"
+            onAction="#OnCheckChanged"/>
+    <TextField
+            fx:id="_tfServerIp"
+            GridPane.columnIndex="1"
+            GridPane.rowIndex="0"
+            promptText="Server IP"
+            text="127.0.0.1"/>
+    <TextField
+            fx:id="_tfPort"
+            GridPane.columnIndex="2"
+            GridPane.rowIndex="0"
+            promptText="Server Port"
+            text="9999"/>
+    <Button
+            fx:id="_bStart"
+            GridPane.columnIndex="3"
+            GridPane.rowIndex="0"
+            GridPane.halignment="CENTER"
+            text="连接服务器"
+            onAction="#onStartClicked"/>
+
+    <ScrollPane
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="1"
+            GridPane.columnSpan="4">
+        <TextFlow fx:id="_textFlow"/>
+    </ScrollPane>
+
+    <TextField
+            fx:id="_tfSend"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="2"
+            GridPane.columnSpan="3"/>
+    <Button
+            fx:id="_bSend"
+            GridPane.columnIndex="3"
+            GridPane.rowIndex="2"
+            GridPane.halignment="CENTER"
+            text="发送"
+            disable="true"
+            onAction="#onSendClick"/>
+</GridPane>
