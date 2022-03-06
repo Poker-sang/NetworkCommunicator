@@ -6,6 +6,9 @@ import javafx.scene.text.*;
 import java.time.*;
 import java.time.format.*;
 
+/**
+ * 显示到文字流
+ */
 public class TextFlowHelper
 {
     public TextFlowHelper(TextFlow textFlow)

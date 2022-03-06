@@ -6,8 +6,10 @@ import org.jetbrains.annotations.*;
 import java.io.*;
 import java.net.*;
 
-//读的线程
-class ReadThread extends Thread
+/**
+ * 用于读写的线程
+ */
+class ReadWriteThread extends Thread
 {
     @Nullable
     private final ServerSocket _serverSocket;
@@ -17,7 +19,7 @@ class ReadThread extends Thread
     private final Messager _newMessage;
     private final Runnable _connectionReset;
 
-    ReadThread(Socket socket, Messager newMessage, Runnable connectionReset)
+    ReadWriteThread(Socket socket, Messager newMessage, Runnable connectionReset)
     {
         _serverSocket = null;
         _callback = null;
@@ -26,7 +28,7 @@ class ReadThread extends Thread
         _connectionReset = connectionReset;
     }
 
-    ReadThread(@NotNull ServerSocket serverSocket, Messager newMessage, @NotNull Messager callback, Runnable connectionReset)
+    ReadWriteThread(@NotNull ServerSocket serverSocket, Messager newMessage, @NotNull Messager callback, Runnable connectionReset)
     {
         _serverSocket = serverSocket;
         _newMessage = newMessage;

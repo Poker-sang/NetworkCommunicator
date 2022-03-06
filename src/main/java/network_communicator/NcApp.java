@@ -1,7 +1,6 @@
 package network_communicator;
 
 import javafx.application.*;
-import javafx.event.*;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.stage.*;
